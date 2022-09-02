@@ -1,6 +1,7 @@
 class LeasesController < ApplicationController
     
     # rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    wrap_parameters format:[]
 
     def create
         lease = Lease.create!(params.permit(:apartment_id, :tenant_id, :rent))
